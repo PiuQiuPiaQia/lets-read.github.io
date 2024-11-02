@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.UnknownNamespace=void 0;var _namespaces=require("./namespaces.js"),_xfa_object=require("./xfa_object.js");class UnknownNamespace{constructor(e){this.namespaceId=e}[_namespaces.$buildXFAObject](e,s){return new _xfa_object.XmlObject(this.namespaceId,e,s)}}exports.UnknownNamespace=UnknownNamespace;

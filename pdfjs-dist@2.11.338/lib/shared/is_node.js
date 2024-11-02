@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isNodeJS=void 0;const isNodeJS="object"===typeof process&&process+""==="[object process]"&&!process.versions.nw&&!(process.versions.electron&&process.type&&"browser"!==process.type);exports.isNodeJS=isNodeJS;

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="TextIn" />
+    <title>TextIn</title>
+    <link rel="icon" href="/not_text_logo.png" type="image/png" />
+    <meta
+      name="keywords"
+      content="OCR，深度学习，AI，文字识别，图像识别，表格识别，身份证识别，发票识别，银行卡识别，营业执照识别，图像技术，在线免费识别"
+    />
+    <meta
+      name="description"
+      content="TextIn 合合信息旗下智能文字识别品牌，专注智能文字识别15年，为扫描全能王、名片全能王提供OCR能力，是集智能文字识别技术、产品、服务于一身的一站式OCR服务平台，为全球数千家企业及上亿用户提供服务。"
+    />
+    <link rel="stylesheet" href="/umi.5cfb6369.css" />
+    <script>
+      window.routerBase = "/";
+    </script>
+    <script>
+      //! umi version: 3.5.0
+    </script>
+    <script src="/classList.polyfill.min.js" defer="true"></script>
+    <script src="/xlsx.full.min.js" defer="true"></script>
+  </head>
+
+  <body>
+    <noscript>TextIn</noscript>
+    <div id="root">
+      <style>
+        html,
+        body,
+        #root {
+          position: relative;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          color: #3a415c;
+        }
+        /* html {
+        overflow-y: scroll;
+      } */
+
+        /* input[type="number"] {
+          -webkit-appearance: none;
+        }
+        input::-webkit-outer-spin-button {
+          -webkit-appearance: textfield;
+        } */
+        .page-loading-warp {
+          padding: 98px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .ant-spin {
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          color: rgba(0, 0, 0, 0.65);
+          font-size: 14px;
+          font-variant: tabular-nums;
+          line-height: 1.5;
+          list-style: none;
+          -webkit-font-feature-settings: "tnum";
+          font-feature-settings: "tnum";
+          position: absolute;
+          display: none;
+          color: #4877ff;
+          text-align: center;
+          vertical-align: middle;
+          opacity: 0;
+          -webkit-transition: -webkit-transform 0.3s
+            cubic-bezier(0.78, 0.14, 0.15, 0.86);
+          transition: -webkit-transform 0.3s
+            cubic-bezier(0.78, 0.14, 0.15, 0.86);
+          transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+          transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86),
+            -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+        }
+
+        .ant-spin-spinning {
+          position: static;
+          display: inline-block;
+          opacity: 1;
+        }
+
+        .ant-spin-dot {
+          position: relative;
+          display: inline-block;
+          font-size: 20px;
+          width: 20px;
+          height: 20px;
+        }
+
+        .ant-spin-dot-item {
+          position: absolute;
+          display: block;
+          width: 9px;
+          height: 9px;
+          background-color: #4877ff;
+          border-radius: 100%;
+          -webkit-transform: scale(0.75);
+          -ms-transform: scale(0.75);
+          transform: scale(0.75);
+          -webkit-transform-origin: 50% 50%;
+          -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          opacity: 0.3;
+          -webkit-animation: antSpinMove 1s infinite linear alternate;
+          animation: antSpinMove 1s infinite linear alternate;
+        }
+
+        .ant-spin-dot-item:nth-child(1) {
+          top: 0;
+          left: 0;
+        }
+
+        .ant-spin-dot-item:nth-child(2) {
+          top: 0;
+          right: 0;
+          -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+        }
+
+        .ant-spin-dot-item:nth-child(3) {
+          right: 0;
+          bottom: 0;
+          -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+        }
+
+        .ant-spin-dot-item:nth-child(4) {
+          bottom: 0;
+          left: 0;
+          -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+        }
+
+        .ant-spin-dot-spin {
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          -webkit-animation: antRotate 1.2s infinite linear;
+          animation: antRotate 1.2s infinite linear;
+        }
+
+        .ant-spin-lg .ant-spin-dot {
+          font-size: 32px;
+          width: 32px;
+          height: 32px;
+        }
+
+        .ant-spin-lg .ant-spin-dot i {
+          width: 14px;
+          height: 14px;
+        }
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          .ant-spin-blur {
+            background: #fff;
+            opacity: 0.5;
+          }
+        }
+
+        @-webkit-keyframes antSpinMove {
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes antSpinMove {
+          to {
+            opacity: 1;
+          }
+        }
+
+        @-webkit-keyframes antRotate {
+          to {
+            -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+          }
+        }
+
+        @keyframes antRotate {
+          to {
+            -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+          }
+        }
+      </style>
+    </div>
+
+    <script src="/vendors.16ab4673.async.js"></script>
+    <script src="/umi.2154c13a.js"></script>
+  </body>
+</html>

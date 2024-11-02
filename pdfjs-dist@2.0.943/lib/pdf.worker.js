@@ -1,0 +1,1 @@
+"use strict";var pdfjsVersion="2.0.943",pdfjsBuild="dc98bf76",pdfjsCoreWorker=require("./core/worker.js");exports.WorkerMessageHandler=pdfjsCoreWorker.WorkerMessageHandler;

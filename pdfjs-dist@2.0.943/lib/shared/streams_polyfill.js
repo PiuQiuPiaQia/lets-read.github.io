@@ -1,0 +1,1 @@
+"use strict";var isReadableStreamSupported=!1;if("undefined"!==typeof ReadableStream)try{new ReadableStream({start:function(e){e.close()}}),isReadableStreamSupported=!0}catch(e){}exports.ReadableStream=isReadableStreamSupported?ReadableStream:require("../../external/streams/streams-lib").ReadableStream;

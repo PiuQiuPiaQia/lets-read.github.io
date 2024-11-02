@@ -1,0 +1,1 @@
+"use strict";module.exports="undefined"!==typeof window&&window.Math===Math?window:"undefined"!==typeof global&&global.Math===Math?global:"undefined"!==typeof self&&self.Math===Math?self:{};

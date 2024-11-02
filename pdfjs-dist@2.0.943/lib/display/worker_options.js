@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var GlobalWorkerOptions=Object.create(null);GlobalWorkerOptions.workerPort=void 0===GlobalWorkerOptions.workerPort?null:GlobalWorkerOptions.workerPort,GlobalWorkerOptions.workerSrc=void 0===GlobalWorkerOptions.workerSrc?"":GlobalWorkerOptions.workerSrc,exports.GlobalWorkerOptions=GlobalWorkerOptions;
